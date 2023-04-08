@@ -1,0 +1,40 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.movie img {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.movie div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.movie h2 {
+  font-size: 18px;
+  margin-bottom: 2px; /* reduce el espacio entre el título y el director */
+}
+
+.movie p {
+  font-size: 14px;
+  margin-bottom: 2px; /* reduce el espacio entre el año y el director */
+}
+
+
+.movie img:hover {
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+
