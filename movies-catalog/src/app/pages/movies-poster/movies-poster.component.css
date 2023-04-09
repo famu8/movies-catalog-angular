@@ -32,7 +32,9 @@
   margin-bottom: 2px; /* reduce el espacio entre el año y el director */
 }
 
-
+* {
+  font-family: Arial, sans-serif;
+}
 .movie img:hover {
   transform: scale(0.9);
   transition: all 0.3s ease-in-out;
