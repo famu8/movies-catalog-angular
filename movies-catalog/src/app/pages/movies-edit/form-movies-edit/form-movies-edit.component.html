@@ -1,27 +1,29 @@
 <div class="container">
   <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
     <div>
-      <label for="imageUrl">URL Imagen:</label>
-      <input type="text" id="imageUrl" formControlName="imageUrl">
-      <div *ngIf="movieForm.get('imageUrl')?.invalid && (movieForm.get('imageUrl')?.dirty || movieForm.get('imageUrl')?.touched)">
-        <div *ngIf="movieForm.get('imageUrl')?.errors?.['required']">
+      <label for="poster">URL Imagen:</label>
+      <input type="text" id="poster" formControlName="poster">
+      <div *ngIf="movieForm.get('poster')?.invalid && (movieForm.get('poster')?.dirty || movieForm.get('poster')?.touched)"
+           [ngClass]="{'error': movieForm.get('poster')?.errors}">
+        <div *ngIf="movieForm.get('poster')?.errors?.['required']">
           La URL de la imagen es requerida.
         </div>
-        <div *ngIf="movieForm.get('imageUrl')?.errors?.['pattern']">
+        <div *ngIf="movieForm.get('poster')?.errors?.['pattern']">
           La URL de la imagen no es válida.
         </div>
       </div>
     </div>
 
     <div>
-      <label for="title">Título:</label>
-      <input type="text" id="title" formControlName="title">
-      <div *ngIf="movieForm.get('title')?.invalid && (movieForm.get('title')?.dirty || movieForm.get('title')?.touched)">
-        <div *ngIf="movieForm.get('title')?.errors?.['required']">
+      <label for="name">Título:</label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="movieForm.get('name')?.invalid && (movieForm.get('name')?.dirty || movieForm.get('name')?.touched)"
+           [ngClass]="{'error': movieForm.get('name')?.errors}">
+        <div *ngIf="movieForm.get('name')?.errors?.['required']">
           El título es requerido.
         </div>
-        <div *ngIf="movieForm.get('title')?.errors?.['minlength']">
-          El título debe tener al menos {{ movieForm.get('title')?.errors?.['minlength'].requiredLength }} caracteres.
+        <div *ngIf="movieForm.get('name')?.errors?.['minlength']">
+          El título debe tener al menos {{ movieForm.get('name')?.errors?.['minlength'].requiredLength }} caracteres.
         </div>
       </div>
     </div>
@@ -29,7 +31,8 @@
     <div>
       <label for="year">Año:</label>
       <input type="number" id="year" formControlName="year">
-      <div *ngIf="movieForm.get('year')?.invalid && (movieForm.get('year')?.dirty || movieForm.get('year')?.touched)">
+      <div *ngIf="movieForm.get('year')?.invalid && (movieForm.get('year')?.dirty || movieForm.get('year')?.touched)"
+           [ngClass]="{'error': movieForm.get('year')?.errors}">
         <div *ngIf="movieForm.get('year')?.errors?.['required']">
           El año es requerido.
         </div>
@@ -45,7 +48,8 @@
     <div>
       <label for="director">Director:</label>
       <input type="text" id="director" formControlName="director">
-      <div *ngIf="movieForm.get('director')?.invalid && (movieForm.get('director')?.dirty || movieForm.get('director')?.touched)">
+      <div *ngIf="movieForm.get('director')?.invalid && (movieForm.get('director')?.dirty || movieForm.get('director')?.touched)"
+           [ngClass]="{'error': movieForm.get('director')?.errors}">
         <div *ngIf="movieForm.get('director')?.errors?.['required']">
           El director es requerido.
         </div>
